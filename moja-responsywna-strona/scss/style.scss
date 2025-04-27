@@ -1,0 +1,181 @@
+@import 'reset';
+@import 'variables';
+
+/* Ustawienia bazowe i globalne */
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", Verdana, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  font-size: $base-font-size;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing;
+  gap: $spacing;
+}
+
+/* Stylizacja nagłówka i stopki */
+header, footer {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $header-bg;
+}
+
+footer {
+  background-color: $footer-bg;
+  text-align: center;
+  margin-top: auto;
+  margin-left: -$spacing;
+  margin-right: -$spacing;
+  margin-bottom: -$spacing;
+}
+
+/* Ustawienia układu w nagłówku */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+/* Stylizacja logo i tytułu */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-height: 50px;
+  margin-right: $spacing;
+}
+.page-title {
+  font-size: $page-title-size;
+}
+
+/* Nawigacja */
+.main-nav {
+  position: relative;
+}
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: $spacing;
+  li a {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: bold;
+  }
+}
+
+/* Główna zawartość strony */
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing;
+  align-items: flex-start;
+}
+
+/* Stylizacja sekcji */
+section {
+  background-color: $section-bg;
+  border: 1px solid #ccc;
+  padding: $spacing;
+  flex: 1;
+  min-height: 360px;
+  p {
+    text-align: justify;
+  }
+}
+.section-title {
+  font-size: $section-title-size;
+  margin-bottom: $spacing;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+}
+.lorem-section .section-title {
+  background-color: $lorem-title-bg;
+}
+.ipsum-section .section-title {
+  background-color: $ipsum-title-bg;
+}
+.dolor-section .section-title {
+  background-color: $dolor-title-bg;
+}
+
+/* Media queries - responsywność */
+@media only screen and (max-width: $mobile-max) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hamburger {
+    display: block;
+    margin-bottom: $spacing;
+  }
+  .nav-menu {
+    display: none;
+  }
+  main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  section {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .hamburger {
+    display: block;
+    margin-right: $spacing;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .lorem-section {
+    flex: none;
+    width: 100%;
+  }
+  .ipsum-section,
+  .dolor-section {
+    flex: none;
+    width: calc(50% - #{$spacing / 2});
+  }
+}
+
+@media only screen and (min-width: $desktop-min) {
+  .hamburger {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+  }
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  section {
+    flex: 1;
+    width: auto;
+  }
+}

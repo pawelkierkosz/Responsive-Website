@@ -1,0 +1,16 @@
+/* Zmienne bazowe: rozmiary czcionek, kolory, odstępy i breakpointy */
+$base-font-size: 16px;
+$page-title-size: $base-font-size * 2;
+$section-title-size: $base-font-size * 1.5;
+$header-bg: #fff;
+$footer-bg: #DFF0D1;
+$section-bg: #DFF0D1;
+$lorem-title-bg: #50BFE6;
+$ipsum-title-bg: #FFA500;
+$dolor-title-bg: #F48FB1;
+$text-color: #333;
+$spacing: 20px;
+$mobile-max: 599px;
+$tablet-min: 600px;
+$tablet-max: 1023px;
+$desktop-min: 1024px;
